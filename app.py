@@ -99,10 +99,7 @@ def predict_fields(
     return {"prediction": prediction}
 
 
-#endpoint which allows user to provide input parameters in json format
-@app.post("/predict/json")
-class InputData(BaseModel):
-    input: List[List[Union[str, int, float, bool]]]
+
 
 @app.post("/predict")
 def predict_from_input(data: InputData):
